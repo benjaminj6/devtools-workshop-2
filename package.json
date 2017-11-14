@@ -1,0 +1,16 @@
+{
+  "name": "chrome-devtools-presentation",
+  "version": "1.0.0",
+  "description": "Using Chrome DevTools like a pro",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chrome",
+    "devtools",
+    "thinkful"
+  ],
+  "author": "Benjamin Johnson <benjamin.d.johnson@icloud.com>",
+  "license": "ISC"
+}
