@@ -12,5 +12,8 @@
     "thinkful"
   ],
   "author": "Benjamin Johnson <benjamin.d.johnson@icloud.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "remark": "^8.0.0"
+  }
 }
