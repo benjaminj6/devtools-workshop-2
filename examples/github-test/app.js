@@ -32,7 +32,11 @@ const setCardAuthor = (repo, content) => {
 const setCardStats = (repo, content) => {
   const statsKeys = [
     { key: 'stargazers_count', label: 'Stars', iconClass: 'star' },
-    { key: 'open_issues_count', label: 'Open Issues', iconClass: 'exclamation' },
+    {
+      key: 'open_issues_count',
+      label: 'Open Issues',
+      iconClass: 'exclamation'
+    },
     { key: 'language', label: 'Language', iconClass: 'code' },
     { key: 'forks', label: 'Forks', iconClass: 'code-fork' }
   ]
