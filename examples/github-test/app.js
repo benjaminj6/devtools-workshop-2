@@ -31,21 +31,25 @@ const setCardAuthor = (repo, content) => {
 
 const setCardStats = (repo, content) => {
   const statsKeys = [
-    { key: 'stargazers_count', label: 'Stars' },
-    { key: 'open_issues_count', label: 'Open Issues' },
-    { key: 'language', label: 'Language' },
-    { key: 'forks', label: 'Forks' }
+    { key: 'stargazers_count', label: 'Stars', iconClass: 'star' },
+    { key: 'open_issues_count', label: 'Open Issues', iconClass: 'exclamation' },
+    { key: 'language', label: 'Language', iconClass: 'code' },
+    { key: 'forks', label: 'Forks', iconClass: 'code-fork' }
   ]
   const statsList = content.querySelector('.stats')
 
   const listItems = statsKeys
-    .map(({ key, label }) => {
-        if (repo[key]) {
-          return `<li class="${key}">${label}: ${repo[key]}</li>`
-        }
+    .map(({ key, label, iconClass }) => {
+      if (repo[key]) {
+        return `
+            <li class="${key}">
+              <i class="fa fa-${iconClass} statIcon"></i>${label}: ${repo[key]}
+            </li>
+          `
+      }
 
-        return ''
-      })
+      return ''
+    })
     .reduce((html, li) => html + li, '')
 
   statsList.innerHTML = listItems
@@ -62,7 +66,7 @@ const createCards = repos => {
     setCardDescription(repo, content)
     setCardAuthor(repo, content)
     setCardStats(repo, content)
-    
+
     const clone = document.importNode(template.content, true)
 
     container.appendChild(clone)
