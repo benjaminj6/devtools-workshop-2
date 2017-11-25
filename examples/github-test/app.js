@@ -61,7 +61,7 @@ const createCards = repos => {
     setCardLink(repo, content)
     setCardDescription(repo, content)
     setCardAuthor(repo, content)
-    setCardStats(repos, content)
+    setCardStats(repo, content)
     
     const clone = document.importNode(template.content, true)
 
