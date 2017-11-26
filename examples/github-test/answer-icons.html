@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Github Repo Search</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+    crossorigin="anonymous">
+
+  <!-- 1. Add link to head to include font-awesome font -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./styles.css">
+
+  <!-- 2. Style the icons -->
+  <!-- Note: this should be dont via the CSS pane rather than inserted into the head of the document -->
+  <style>
+    /* 2a. positioning of icons */
+
+    .statIcon {
+      width: 1rem;
+      height: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 0.5rem;
+    }
+
+    /* 2b. coloring each icon */
+
+    .fa-star {
+      color: gold;
+    }
+
+    .fa-exclamation-circle {
+      color: crimson;
+    }
+
+    .fa-code {
+      color: mediumseagreen;
+    }
+
+    .fa-code-fork {
+      color: mediumpurple;
+    }
+
+    /* 
+    BONUS: add a hover effect to each item...
+    should be able to do with a single rule.
+
+    NOTE: this cannot be previewed through interaction with the element, 
+    you will have to toggle the state via devtools
+    */
+    .stats li:hover {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <form class="submitForm" id="repoSearch" action="">
+    <label class="topicLabel" for="searchTopic">Search for a topic</label>
+    <input class="form-control topicInput" type="text" name="searchTopic">
+    <button class="btn btn-primary submitButton" type="submit">Search!</button>
+  </form>
+
+  <div id="items" class='repoList'>
+
+  </div>
+
+  <template id="repoTemplate">
+    <article class="article card">
+      <h1>
+        <a class="link" target="_blank"></a>
+      </h1>
+
+      <h2 class="description"></h2>
+
+      <div class="author">
+        <h3 class="authorName"></h3>
+        <img class="avatar">
+      </div>
+
+      <ul class="stats"></ul>
+    </article>
+  </template>
+  <script src="./app.js"></script>
+</body>
+
+</html>

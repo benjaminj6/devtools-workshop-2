@@ -1,27 +1,44 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>My Awesome Presentation</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <style type="text/css">
-      body { font-family: 'Helvetica'; }
-      h1, h2, h3 {
-        font-family: 'Menlo';
-        font-weight: normal;
-      }
 
-      .remark-slide-content h2 {
-        font-size: 2.5rem;
-      }
+<head>
+  <title>My Awesome Presentation</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <style type="text/css">
+    body {
+      font-family: 'Helvetica';
+    }
 
-      .remark-slide-content h3 {
-        font-size: 2rem;
-      }
-      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
-    </style>
-  </head>
-  <body onload="var slideshow = remark.create();">
-    <textarea id="source">
+    img {
+      width: 100%;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-weight: normal;
+    }
+
+    .remark-slide-content h2 {
+      font-size: 2.5rem;
+    }
+
+    .remark-slide-content h3 {
+      font-size: 2rem;
+    }
+
+    .remark-code,
+    .remark-inline-code {
+      font-family: 'Ubuntu Mono', Courier New, Courier, monospace;
+      background: whitesmoke;
+      padding: 0 0.25rem;
+    }
+  </style>
+</head>
+
+<body onload="var slideshow = remark.create();">
+  <textarea id="source">
 
 class: center, middle
 
@@ -68,8 +85,53 @@ class: center, middle
 - Note: this mode does not account for _real_ browser support differences...in order to adequately know what your device looks like on actual devices you should test on an actual device.
 - However, this mode is crucial if you are doing mobile-first design since you can view what the website looks like at different breakpoints.
 
+---
+# Inspecting/Live-Editing the DOM
+
+???
+## Things to demo
+### selecting an element
+### edit an element's attributes
+- change item `href` to open one of the links to `www.thinkful.com`
+
+### Adding an element to the DOM
+- add an `a` tag to the top of the document to my website
+
+## Shortcuts
+- arrow keys to navigate faster
+
+---
+# Inspecting/Live-Editing Different Sizes
+
+???
+### View different breakpoints
+### Device Emulator
+### Changing the Percentage Size to view larger screens
+
+---
+# Inspecting/Live-Editing CSS
+
+???
+## Things to demo
+### Adding a rule (`+` icon)
+### `inspector-stylesheet` for more complex rules (media queries, states)
+### Adding states to an element to lock it into a state
+### Toggling classes/rules on an element with the CSS tab
+### Viewing _all_ rules applied to a single element
+---
+# Challenge: Responsive Design
+
+### 1. View the [example repo](<!-- TODO - add link -->)
+### 2. Note how this design is _not_ mobile-first _or_ responsive.
+### 3. Add styles / media queries to make the mobile design look like [this mockup](./img/challenge-responsive.png)
+
+---
+# Challenge: Inspecting the DOM
+
+
     </textarea>
-    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
-    </script>
-  </body>
+  <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+  </script>
+</body>
+
 </html>

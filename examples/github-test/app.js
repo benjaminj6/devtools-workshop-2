@@ -35,7 +35,7 @@ const setCardStats = (repo, content) => {
     {
       key: 'open_issues_count',
       label: 'Open Issues',
-      iconClass: 'exclamation'
+      iconClass: 'exclamation-circle'
     },
     { key: 'language', label: 'Language', iconClass: 'code' },
     { key: 'forks', label: 'Forks', iconClass: 'code-fork' }
@@ -59,33 +59,34 @@ const setCardStats = (repo, content) => {
   statsList.innerHTML = listItems
 }
 
-const createCards = repos => {
-  const container = document.getElementById('items')
+const createCards = (repos) => {
   const template = document.getElementById('repoTemplate')
-
+  const container = document.getElementById('items')
+  container.innerHTML = ''
+  
   repos.forEach(repo => {
     const { content } = template
-
+    
     setCardLink(repo, content)
     setCardDescription(repo, content)
     setCardAuthor(repo, content)
     setCardStats(repo, content)
-
+    
     const clone = document.importNode(template.content, true)
-
+    
     container.appendChild(clone)
   })
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('repoSearch')
-
+  
   form.addEventListener('submit', ev => {
     event.preventDefault()
-
+    
     const searchTopic = ev.target.elements.searchTopic
     const { value: searchTopicValue } = searchTopic
-
+    
     getRepos(searchTopicValue).then(repos => createCards(repos))
   })
 })

@@ -17,7 +17,7 @@ ul {
 
 .topicInput {
   flex-grow: 1;
-  width: 200px;
+  width: 100px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
@@ -25,6 +25,7 @@ ul {
 .submitButton {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  max-width: 100px;
 }
 
 .repoList {
@@ -86,4 +87,5 @@ ul {
 
 .stats li {
   display: flex;
+  align-items: center;
 }
