@@ -5,6 +5,12 @@
   <title>My Awesome Presentation</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <style type="text/css">
+    :root {
+      --header-width: 20rem;
+      --accent: cornflowerblue;
+      --font-secondary: Menlo, Andale Mono, 'Courier New', monospace;
+    }
+
     body {
       font-family: 'Helvetica';
     }
@@ -13,11 +19,63 @@
       width: 100%;
     }
 
-    h1,
+    h1 {
+      font-family: var(--font-secondary);
+      font-size: 1.25rem;
+    }
+
     h2,
     h3 {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       font-weight: normal;
+    }
+
+    /* TODO -- see if needs scaling or not */
+    /* .remark-slide-scaler {
+      transform: none !important;
+      left: 0 !important; 
+      width: 100% !important;
+      height: 100% !important;
+    } */
+    
+    .remark-slide-content {
+      position: relative;
+      padding: 4rem;
+    }
+
+    .center.middle {
+      background: var(--accent);
+      color: white;
+    }
+
+    .center.middle a {
+      color: white;
+      font-family: var(--font-secondary);
+    }
+
+    .remark-slide-content:not(.center):not(.middle) {
+      padding-right: calc(var(--header-width) + 2rem);
+    } 
+
+    .remark-slide-content:not(.center):not(.middle) h1 {
+      width: var(--header-width);
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      margin: 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      padding: 2rem 2rem 1rem;
+      right: 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+
+    .remark-slide-content h1 {
+      font-size: 2rem;
     }
 
     .remark-slide-content h2 {
@@ -28,11 +86,25 @@
       font-size: 2rem;
     }
 
+    .remark-slide-content ol,
+    .remark-slide-content ul {
+      font-size: 1.75rem;
+    }
+
     .remark-code,
     .remark-inline-code {
       font-family: 'Ubuntu Mono', Courier New, Courier, monospace;
       background: whitesmoke;
       padding: 0 0.25rem;
+    }
+
+    .remark-slide-number {
+      color: white;
+      opacity: 0.75;
+    }
+
+    li + li {
+      margin-top: 1rem;
     }
   </style>
 </head>
@@ -45,104 +117,122 @@ class: center, middle
 # Chrome Dev Tools
 
 ---
+class: center, middle
 
 # About Me
 
-## 1. Past career - freelance bassist
-## 2. Thinkful alum 
-## 3. Current - Software Engineer at [Autogravity](https://www.autogravity.com/)
+???
+1. Pre-Thinkful
+2. As a student
+3. Now - AG
 
 ---
 # Why Chrome DevTools?
 
-## 1. Productivity
-## 2. Professionalism
-## 3. Deeper Insight
-
 ???
 
-### Productivity
-- Using Chrome DevTools will allow you to prototype/try things out in the browser without context switching back-and-forth between your editor and the browser.
+1. Productivity
+  - Using Chrome DevTools will allow you to prototype/try things out in the browser without context switching back-and-forth between your editor and the browser.
 
-### Professionalism
-- Chances are the pros are using developer tools _every. single. day._ Knowing your way around the tooling makes you look like you've been developing a lot longer than 3-6 months.
+2. Professionalism
+  - Chances are the pros are using developer tools _every. single. day._ Knowing your way around the tooling makes you look like you've been developing a lot longer than 3-6 months.
 
-### Deeper Insight
-- There's a lot of things that you can inspect/debug using developer tools that you wouldn't be able to profile/inspect otherwise.
-- You can inspect _any_ page...so if you see something you like on a website, you can actually inspect _exactly_ how it is done.
+3. Deeper Insight
+  - There's a lot of things that you can inspect/debug using developer tools that you wouldn't be able to profile/inspect otherwise.
+  - You can inspect _any_ page...so if you see something you like on a website, you can actually inspect _exactly_ how it is done.
 
----
-# Today's Scope: The Elements Tab
 
-## Live-Editing & Inspecting the DOM
-## Live-Editing & Inspecting CSS
-## Inspecting Your Site on Different Device Sizes
 
-???
-## Live-Editing & Inspecting the DOM
-## Live-Editing & Inspecting CSS
-## Inspecting Your Site on Different Device Sizes
-- Note: this mode does not account for _real_ browser support differences...in order to adequately know what your device looks like on actual devices you should test on an actual device.
-- However, this mode is crucial if you are doing mobile-first design since you can view what the website looks like at different breakpoints.
+--
 
----
-# Inspecting/Live-Editing the DOM
+1. Productivity
 
-???
-## Things to demo
-### selecting an element
-### edit an element's attributes
-- change item `href` to open one of the links to `www.thinkful.com`
+--
 
-### Adding an element to the DOM
-- add an `a` tag to the top of the document to my website
+2. Professionalism
 
-## Shortcuts
-- arrow keys to navigate faster
+--
+
+3. Deeper Insight
 
 ---
-# Inspecting/Live-Editing Different Sizes
+# Today: The Elements Tab
 
-???
-### View different breakpoints
-### Device Emulator
-### Changing the Percentage Size to view larger screens
+1. Live-Editing & Inspecting the DOM
+
+--
+2. Live-Editing & Inspecting CSS
+
+--
+3. Inspecting Your Site on Different Device Sizes
+
 
 ---
-# Inspecting/Live-Editing CSS
+class: center, middle
+
+# Inspecting & Live-Editing the DOM
 
 ???
 ## Things to demo
-### Adding a rule (`+` icon)
-### `inspector-stylesheet` for more complex rules (media queries, states)
-### Adding states to an element to lock it into a state
-### Toggling classes/rules on an element with the CSS tab
-### Viewing _all_ rules applied to a single element
+1. selecting an element
+2. edit an element's attributes
+  - change item `href` to open one of the links to `www.thinkful.com`
+
+3. Adding an element to the DOM
+  - add an `a` tag to the top of the document to my website
+
+4. Shortcuts
+  - arrow keys to navigate faster
+
 ---
+class: center, middle
+
+# Inspecting & Live-Editing Different Sizes
+
+???
+1. View different breakpoints
+2. Device Emulator
+3. Changing the Percentage Size to view larger screens
+
+---
+class: center, middle
+
+# Inspecting & Live-Editing CSS
+
+???
+## Things to demo
+1. Adding a rule (`+` icon)
+1. `inspector-stylesheet` for more complex rules (media queries, states)
+1. Adding states to an element to lock it into a state
+1. Toggling classes/rules on an element with the CSS tab
+1. Viewing _all_ rules applied to a single element
+
+---
+class: center, middle
+
 # Challenge #1: Responsive Design
 
-### 1. View the [example repo](./examples/github-test)
-### 2. Note how this design is _not_ mobile-first _or_ responsive.
-### 3. Add styles / media queries to make the mobile design look like [this mockup](./img/challenge-responsive.png)
+https://benjaminj6.github.io/devtools-workshop-1/challenge-1.md
+
 
 ---
-# Challenge #2: Changing markup
+class: center, middle
 
-### 1. You'll notice that although the search input has a label, but there is currently no placeholder text. Add some placeholder text to the input
-### 2. Let's include links to social media at the bottom. 
-- Add a footer element at the bottom of the page
-- Include links to at least two social media accounts (twitter, github, linkedin, etc.). 
-- The links should open your account in a new tab.
+# Challenge #2: Changing Markup
 
-### 3. **Bonus:** style the footer to look like [this mockup](./img/footer.png).
+https://benjaminj6.github.io/devtools-workshop-1/challenge-2.md
+
 ---
-# Challenge: Adding & Styling Icons
+class: center, middle
 
-### 1. Inspect a card. You'll notice that within the `stats` list there are `<i>` tags in the markup.
-### 2. Add [this font-awesome stylesheet](https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css) to the document. You should be able to the see the icons now.
-### 3. Style the icons so that they look like [this mockup](./img/icons.png)
-### 4. **Bonus:** Add extra CSS rules/selectors to apply a hover effect (bold text) to each icon
+# Challenge #3: Adding & Styling Icons
 
+https://benjaminj6.github.io/devtools-workshop-1/challenge-3.md
+
+---
+class: center, middle
+
+# Sharing / Q & A
 
     </textarea>
   <script src="https://remarkjs.com/downloads/remark-latest.min.js">
